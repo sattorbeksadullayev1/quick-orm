@@ -1,12 +1,12 @@
 # Quick-ORM
 
-Async PostgreSQL ORM with strong type hints and Laravel-style API.
+Async PostgreSQL ORM with strong type hints and fluent query builder.
 
 ## Features
 
 - 🚀 **Async-first** - Built on asyncpg for high performance
 - 🔒 **Type-safe** - Full type hints with generics support
-- 🎯 **Simple API** - Laravel/Eloquent-inspired fluent interface
+- 🎯 **Simple API** - Intuitive fluent interface
 - 🔗 **Relations** - BelongsTo, HasOne, HasMany, ManyToMany, Polymorphic, Through
 - 📊 **Query Builder** - Powerful query construction with method chaining
 - 🔄 **Migrations** - Schema management with up/down migrations
