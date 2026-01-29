@@ -217,4 +217,4 @@ quick db columns <table>       # Show table columns
 
 ## License
 
-MIT License - Copyright (c) 2026 Sattorbek Sa'dullayev
+MIT License - Copyright (c) 2025 Sattorbek Sa'dullayev
