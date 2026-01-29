@@ -10,7 +10,7 @@ class Seeder:
     async def seed(self, model_class, data: List[Dict[str, Any]]) -> List[Any]:
         from quick.orm.query.bulk import BulkInsertBuilder
         
-        builder = BulkInsertBuilder(self.database, model_class)
+        builder = BulkInsertBuilder(model_class, self.database)
         builder = builder.values(*data)
         return await builder.returning().execute()
     
@@ -28,7 +28,7 @@ class Seeder:
     async def truncate(self, model_class) -> None:
         table_name = model_class.get_table_name()
         query = f"TRUNCATE TABLE {table_name} RESTART IDENTITY CASCADE"
-        await self.database.connection_pool.execute(query)
+        await self.database.execute(query)
 
 
 class Factory:
@@ -67,3 +67,6 @@ class Factory:
         
         seeder = Seeder(database)
         return await seeder.seed(self.model_class, data)
+
+
+__all__ = ["Seeder", "Factory"]

@@ -30,7 +30,7 @@ class SoftDeleteMixin:
         where_clause = " AND ".join(where_parts)
         query = f"UPDATE {table_name} SET {set_clause} WHERE {where_clause} RETURNING *"
         
-        result = await database.connection_pool.pool.fetchrow(query, *params)
+        result = await database.fetchrow(query, *params)
         
         if result:
             self.deleted_at = result["deleted_at"]
@@ -57,7 +57,7 @@ class SoftDeleteMixin:
         where_clause = " AND ".join(where_parts)
         query = f"UPDATE {table_name} SET {set_clause} WHERE {where_clause} RETURNING *"
         
-        result = await database.connection_pool.pool.fetchrow(query, *params)
+        result = await database.fetchrow(query, *params)
         
         if result:
             self.deleted_at = None
@@ -83,4 +83,7 @@ class SoftDeleteMixin:
         where_clause = " AND ".join(where_parts)
         query = f"DELETE FROM {table_name} WHERE {where_clause}"
         
-        await database.connection_pool.pool.execute(query, *params)
+        await database.execute(query, *params)
+
+
+__all__ = ["SoftDeleteMixin"]

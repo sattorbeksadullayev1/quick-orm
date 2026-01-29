@@ -94,3 +94,6 @@ class QueryLogger:
             "avg_duration_ms": sum(durations) / len(durations) if durations else 0,
             "max_duration_ms": max(durations) if durations else 0
         }
+
+
+__all__ = ["QueryLogger"]

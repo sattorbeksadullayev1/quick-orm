@@ -90,3 +90,6 @@ class CacheManager:
     def enable_all(self) -> None:
         for cache in self._caches.values():
             cache.enable()
+
+
+__all__ = ["QueryCache", "CacheManager"]

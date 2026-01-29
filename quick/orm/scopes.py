@@ -61,3 +61,6 @@ def only_trashed():
         query_builder._only_trashed = True
         return query_builder
     return decorator
+
+
+__all__ = ["Scope", "SoftDeleteScope", "with_trashed", "only_trashed"]

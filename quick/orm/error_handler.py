@@ -91,3 +91,6 @@ class ErrorHandler:
         
         if show_traceback:
             console.print("\n" + "".join(traceback.format_tb(error.__traceback__)), style="dim")
+
+
+__all__ = ["ErrorHandler", "console"]

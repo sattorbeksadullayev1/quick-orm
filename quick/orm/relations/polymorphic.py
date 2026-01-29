@@ -3,7 +3,7 @@ from .base import Relation
 from quick.orm.models.base import Model
 
 
-class MorphTo(Relation):
+class MorphTo:
     def __init__(
         self,
         morph_type_column: str = "morphable_type",

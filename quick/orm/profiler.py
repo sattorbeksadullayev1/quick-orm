@@ -74,3 +74,5 @@ class QueryProfiler:
 
 
 profiler = QueryProfiler()
+
+__all__ = ["QueryProfiler", "profiler"]

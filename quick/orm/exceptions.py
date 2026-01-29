@@ -60,3 +60,18 @@ class DuplicateEntryError(QuickORMError):
     def __init__(self, message: str, key: Optional[str] = None):
         super().__init__(message, {"key": key})
         self.key = key
+
+
+__all__ = [
+    "QuickORMError",
+    "ConnectionError",
+    "QueryError",
+    "ValidationError",
+    "ModelNotFoundError",
+    "RelationError",
+    "MigrationError",
+    "ConfigurationError",
+    "TransactionError",
+    "SchemaError",
+    "DuplicateEntryError",
+]
