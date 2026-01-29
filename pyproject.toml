@@ -4,18 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "quick-opg"
-version = "0.3.0"
-description = "Async PostgreSQL ORM with strong type hints and Laravel-style API"
+version = "0.1.0"
+description = "Async PostgreSQL ORM with YAML-based model generation"
 authors = [{name = "Sattorbek Sa'dullayev", email = "sattorbeksadullayev1@gmail.com"}]
 license = {text = "MIT"}
 readme = "README.md"
-requires-python = ">=3.11"
-keywords = ["orm", "postgresql", "async", "asyncpg", "database", "sql", "laravel", "eloquent"]
+requires-python = ">=3.10"
+keywords = ["orm", "postgresql", "async", "asyncpg", "database", "sql", "yaml"]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Database",
