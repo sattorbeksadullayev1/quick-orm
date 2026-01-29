@@ -94,6 +94,36 @@ Generate Python models from YAML:
 quick generate
 ```
 
+This generates Python model files in the `models/` directory:
+
+```python
+# models/user.py
+from quick.orm import models, columns, validators, relations
+
+@models.table("users")
+class User(models.Model):
+    id = columns.UUID(primary_key=True, auto_generate=True)
+    username = columns.String(max_length=50, unique=True, validators=[validators.MinLength(3)])
+    email = columns.String(max_length=100, validators=[validators.Email()])
+    age = columns.Integer(nullable=True)
+    created_at = columns.DateTime(auto_now_add=True)
+    
+    posts = relations.HasMany("posts", foreign_key="user_id")
+
+# models/post.py
+from quick.orm import models, columns, relations
+
+@models.table("posts")
+class Post(models.Model):
+    id = columns.Integer(primary_key=True, auto_increment=True)
+    user_id = columns.UUID()
+    title = columns.String(max_length=200)
+    content = columns.Text()
+    published_at = columns.DateTime(nullable=True)
+    
+    user = relations.BelongsTo("users", foreign_key="user_id")
+```
+
 Use in your application:
 
 ```python
